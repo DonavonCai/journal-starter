@@ -112,7 +112,7 @@ You'll use **feature branches** and **Pull Requests (PRs)** for each task. Compl
 #### Task 1a: GET Single Entry Endpoint
 
 - Branch: `feature/get-single-entry`
-- [ ] Implement **GET /entries/{entry_id}** in `api/routers/journal_router.py`
+- [ x ] Implement **GET /entries/{entry_id}** in `api/routers/journal_router.py`
 
 #### Task 1b: DELETE Single Entry Endpoint
 
