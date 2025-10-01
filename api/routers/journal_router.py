@@ -79,7 +79,7 @@ async def get_entry(request: Request, entry_id: str, entry_service: EntryService
 
     if not result:
         raise HTTPException(
-            status_code=501, detail=f"Error retrieving entry: " + entry_id)
+            status_code=501, detail=f"Entry not found")
 
     return result
 
@@ -112,8 +112,15 @@ async def delete_entry(request: Request, entry_id: str, entry_service: EntryServ
 
     Hint: Look at how the update_entry endpoint checks for existence
     """
-    raise HTTPException(
-        status_code=501, detail="Not implemented - complete this endpoint!")
+    async with PostgresDB() as db:
+        entry_service = EntryService(db)
+        exists = await entry_service.get_entry(entry_id)
+        if not exists:
+            raise HTTPException(
+                status_code=501, detail=f"Entry not found")
+        else:
+            result = await entry_service.delete_entry(entry_id)
+        return result
 
 
 @router.delete("/entries")

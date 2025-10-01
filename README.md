@@ -117,7 +117,7 @@ You'll use **feature branches** and **Pull Requests (PRs)** for each task. Compl
 #### Task 1b: DELETE Single Entry Endpoint
 
 - Branch: `feature/delete-entry`
-- [ ] Implement **DELETE /entries/{entry_id}** in `api/routers/journal_router.py`
+- [ x ] Implement **DELETE /entries/{entry_id}** in `api/routers/journal_router.py`
 
 ### 2. Logging Setup (Required)
 
